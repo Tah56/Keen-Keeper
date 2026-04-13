@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://example.com/photo1.jpg",
+    "email": "john@example.com",
+    "days_since_contact": 16,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Ahmed",
+    "picture": "https://example.com/photo2.jpg",
+    "email": "sarah@example.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["work", "designer"],
+    "bio": "Worked on UI projects together.",
+    "goal": 14,
+    "next_due_date": "2025-07-22"
+  },
+  {
+    "id": 3,
+    "name": "Michael Lee",
+    "picture": "https://example.com/photo3.jpg",
+    "email": "michael@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["gym", "friend"],
+    "bio": "Workout partner.",
+    "goal": 10,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 4,
+    "name": "Ayesha Khan",
+    "picture": "https://example.com/photo4.jpg",
+    "email": "ayesha@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["family"],
+    "bio": "Cousin. Needs regular check-ins.",
+    "goal": 15,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 5,
+    "name": "David Smith",
+    "picture": "https://example.com/photo5.jpg",
+    "email": "david@example.com",
+    "days_since_contact": 9,
+    "status": "on-track",
+    "tags": ["client"],
+    "bio": "Freelance client.",
+    "goal": 14,
+    "next_due_date": "2025-07-27"
+  },
+  {
+    "id": 6,
+    "name": "Nusrat Jahan",
+    "picture": "https://example.com/photo6.jpg",
+    "email": "nusrat@example.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["college", "project mate"],
+    "bio": "Worked on group assignments.",
+    "goal": 14,
+    "next_due_date": "2025-07-21"
+  },
+  {
+    "id": 7,
+    "name": "Chris Evans",
+    "picture": "https://example.com/photo7.jpg",
+    "email": "chris@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["networking"],
+    "bio": "Met at a tech conference.",
+    "goal": 14,
+    "next_due_date": "2025-07-19"
+  },
+  {
+    "id": 8,
+    "name": "Fatima Noor",
+    "picture": "https://example.com/photo8.jpg",
+    "email": "fatima@example.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["school friend"],
+    "bio": "Old school friend.",
+    "goal": 12,
+    "next_due_date": "2025-07-26"
+  },
+  {
+    "id": 9,
+    "name": "Rahim Uddin",
+    "picture": "https://example.com/photo9.jpg",
+    "email": "rahim@example.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["business"],
+    "bio": "Business partner.",
+    "goal": 14,
+    "next_due_date": "2025-07-22"
+  },
+  {
+    "id": 10,
+    "name": "Emily Clark",
+    "picture": "https://example.com/photo10.jpg",
+    "email": "emily@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["friend", "travel"],
+    "bio": "Travel buddy.",
+    "goal": 10,
+    "next_due_date": "2025-07-28"
+  }
+]
