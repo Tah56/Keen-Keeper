@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
         Component: TimeLine,
       },
       {
-        path: "friendsdetails/:id",
+        path: "friendsdetails/:num",
         loader: async () => {
           const res = await fetch("/friendsData.json");
           const data = await res.json();
