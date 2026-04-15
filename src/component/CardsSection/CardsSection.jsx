@@ -20,10 +20,18 @@ const CardsSection = () => {
 
     
     return (
-        <div className='grid lg:grid-cols-3 gap-10'>
-            <Suspense>
+        <div className='w-10/12 mx-auto'>
+            <h2>Yours Friend</h2>
+        
+            <Suspense fallback={<div className="flex justify-center items-center ">
+
+                <span className="loading loading-spinner loading-xl"></span>
+            </div>
+        }>
+        <div className='  grid lg:grid-cols-3 gap-10'>
 
             <Card cardData={cardData}/>
+        </div>
             </Suspense>
         </div>
     );
