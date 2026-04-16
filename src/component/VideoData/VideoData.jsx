@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 import { friendData } from "../ContextApi/ContextApi";
 
-const AllData = () => {
+const VideoData = () => {
   const context = useContext(friendData);
   const { timeLIne, setTimeLine, filtering, nam, type, call } = context;
+  console.log(type);
 
   return (
     <div>
-      {timeLIne.length === 0 ? (
-        <h2>{timeLIne.length}</h2>
+      {type.length === 0 ? (
+        <h2>{type.length}</h2>
       ) : (
-        <div>
-          {timeLIne.map((data,i) => {
+        <div className="border">
+          {type.map((data,i) => {
             return (
               <ul key={i} className="list bg-base-100 rounded-box shadow-md">
                 <li className="p-4 pb-2 text-xs opacity-60 tracking-wide"></li>
@@ -73,4 +74,4 @@ const AllData = () => {
   );
 };
 
-export default AllData;
+export default VideoData;

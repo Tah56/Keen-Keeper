@@ -35,8 +35,8 @@ const FriendDEtails = () => {
                 {finding.status}
               </p>
               <div className="flex font-bold p-2.5 rounded-full gap-2 bg-[#CBFADB] uppercase">
-                {finding.tags.map((id) => (
-                  <p className="text-[#244D3F] ">{id}</p>
+                {finding.tags.map((id,k) => (
+                  <p key={k} className="text-[#244D3F] ">{id}</p>
                 ))}
               </div>
               <p className="text-[#64748B] italic up">"{finding.bio}"</p>

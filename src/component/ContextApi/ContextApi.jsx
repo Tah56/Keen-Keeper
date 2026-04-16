@@ -11,6 +11,9 @@ const ContextApi = ({ children }) => {
   const [nam, setNam] = useState([]);
   const [type, setType] = useState([]);
   const [call, setCall] = useState([]);
+  const [filter,setFilter]=useState("all")
+  console.log(filter);
+  
 
   const timelineHandler = (d, data) => {
     const id = d.toLowerCase();
@@ -51,7 +54,17 @@ const ContextApi = ({ children }) => {
     
             if(values==="video"){
                 const t = timeLIne.filter(id => id.type ==="video")
-                setTimeLine(t)
+                setType(t)
+               
+                return
+               
+            }else if (values==="text") {
+              const a = timeLIne.filter(id => id.type ==="text")
+              setNam(a)
+            }else if(values==="call"){
+              const d= timeLIne.filter(id => id.type ==="call")
+              setCall(d)
+
             }
     
     
@@ -65,7 +78,9 @@ const ContextApi = ({ children }) => {
     nam,
     type,
     call,
-    filtering 
+    filtering,
+    filter,
+    setFilter 
   };
 
   return <friendData.Provider value={data}>{children}</friendData.Provider>;
