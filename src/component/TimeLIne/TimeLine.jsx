@@ -28,7 +28,7 @@ const TimeLine = () => {
         defaultValue="Pick a color"
         className="select appearance-none"
       >
-        <option value="all" >filter</option>
+        <option  value="all" >filter</option>
         <option value="text">text</option>
         <option value="video">video</option>
         <option value="call">call</option>

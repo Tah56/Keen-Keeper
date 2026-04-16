@@ -3,16 +3,15 @@ import { friendData } from "../ContextApi/ContextApi";
 
 const VideoData = () => {
   const context = useContext(friendData);
-  const { timeLIne, setTimeLine, filtering, nam, type, call } = context;
-  console.log(type);
+  const {  video } = context;
 
   return (
     <div>
-      {type.length === 0 ? (
-        <h2>{type.length}</h2>
+      {video.length === 0 ? (
+        <h2>{video.length}</h2>
       ) : (
         <div className="border">
-          {type.map((data,i) => {
+          {video.map((data,i) => {
             return (
               <ul key={i} className="list bg-base-100 rounded-box shadow-md">
                 <li className="p-4 pb-2 text-xs opacity-60 tracking-wide"></li>

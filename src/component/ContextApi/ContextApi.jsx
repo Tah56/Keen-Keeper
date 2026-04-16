@@ -9,11 +9,10 @@ export const friendData = createContext();
 const ContextApi = ({ children }) => {
   const [timeLIne, setTimeLine] = useState([]);
   const [nam, setNam] = useState([]);
-  const [type, setType] = useState([]);
+  const [video, setVideo] = useState([]);
   const [call, setCall] = useState([]);
-  const [filter,setFilter]=useState("all")
+  const [filter, setFilter] = useState("all");
   console.log(filter);
-  
 
   const timelineHandler = (d, data) => {
     const id = d.toLowerCase();
@@ -21,11 +20,11 @@ const ContextApi = ({ children }) => {
     console.log(id);
 
     console.log(nam);
-    const date = new Date().toLocaleString()
+    const date = new Date().toLocaleString();
     const update = {
       ...data,
       type: id,
-      date
+      date,
     };
     console.log(update);
 
@@ -36,51 +35,43 @@ const ContextApi = ({ children }) => {
     } else {
       setTimeLine([...timeLIne, update]);
     }
-    if (update.type === "text") {
-      setType([...type, update]);
-    } else if (update.type === "video") {
+    if (update.type === "video") {
+      setVideo([...video, update]);
+    } else if (update.type ==="text" ) {
       setNam([...nam, update]);
     } else {
       setCall([...call, update]);
     }
     console.log(timeLIne);
-   
   };
 
-  const filtering = (e="null")=>{
-    const values = e
+  const filtering = (e = "null") => {
+    const values = e;
 
     console.log(values);
-    
-            if(values==="video"){
-                const t = timeLIne.filter(id => id.type ==="video")
-                setType(t)
-               
-                return
-               
-            }else if (values==="text") {
-              const a = timeLIne.filter(id => id.type ==="text")
-              setNam(a)
-            }else if(values==="call"){
-              const d= timeLIne.filter(id => id.type ==="call")
-              setCall(d)
 
-            }
-    
-    
-    
-
-  }
+    if (values === "video") {
+      const t = timeLIne.filter((id) => id.type === "video");
+      setVideo(t);
+      return;
+    } else if (values === "text") {
+      const a = timeLIne.filter((id) => id.type === "text");
+      setNam(a);
+    } else if (values === "call") {
+      const d = timeLIne.filter((id) => id.type === "call");
+      setCall(d);
+    }
+  };
   const data = {
     timelineHandler,
     timeLIne,
     setTimeLine,
     nam,
-    type,
+    video,
     call,
     filtering,
     filter,
-    setFilter 
+    setFilter,
   };
 
   return <friendData.Provider value={data}>{children}</friendData.Provider>;

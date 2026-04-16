@@ -4,7 +4,7 @@ import { friendData } from '../ContextApi/ContextApi';
 
 const TextData = () => {
      const context = useContext(friendData);
-  const { timeLIne, setTimeLine,filtering,nam,type,call } = context;
+  const { nam } = context;
     return (
            <div>
       {nam.length === 0 ? (

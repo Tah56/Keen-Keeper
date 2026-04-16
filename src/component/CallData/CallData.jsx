@@ -3,7 +3,7 @@ import { friendData } from "../ContextApi/ContextApi";
 
 const CallData = () => {
   const context = useContext(friendData);
-  const { timeLIne, setTimeLine, filtering, nam, type, call } = context;
+  const { call } = context;
  
   return (
     <div>
