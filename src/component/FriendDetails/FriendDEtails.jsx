@@ -8,10 +8,9 @@ import { useLoaderData, useParams } from "react-router";
 import ContextApi, { friendData } from "../ContextApi/ContextApi";
 
 const FriendDEtails = () => {
-  const context =useContext(friendData)
-  const{timelineHandler}=context
+  const context = useContext(friendData);
+  const { timelineHandler } = context;
   const { num } = useParams();
-  
 
   const data = useLoaderData();
   console.log(data);
@@ -92,28 +91,45 @@ const FriendDEtails = () => {
             </div>
             <button className="btn">Edit</button>
           </div>
-          
-            <div className="  bg-white p-10 rounded-2xl shadow-2xl ">
-              <p className="mb-2.5 text-[#244D3F] font-medium ">Quick Check-In</p>
-              <div className="flex flex-col md:flex-row   gap-2.5  items-center text-center">
 
-               <div onClick={()=>{timelineHandler("call",finding)}}  className="shadow-xl py-2.5  rounded-xl w-4/12 h-full flex flex-col items-center btn bg-[#F8FAFC] ">
-               <p> <BiPhoneCall className="text-4xl" /></p>
-                <p className="text-lg font-medium text-black">Call</p>
-              </div>
-              <div onClick={()=>{timelineHandler("text",finding)}}  className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] ">
-               <p> <PiChatText className="text-4xl" /></p>
-                <p className="text-lg font-medium text-black">Text</p>
-              </div>
-              <div onClick={()=>{timelineHandler("video",finding)}} id="video" className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] ">
-               <p> <HiVideoCamera className="text-4xl" /></p>
-                <p className="text-lg font-medium text-black">Video</p>
-              </div>
+          <div className="  bg-white p-10 rounded-2xl shadow-2xl ">
+            <p className="mb-2.5 text-[#244D3F] font-medium ">Quick Check-In</p>
+            <div className="flex flex-col md:flex-row   gap-2.5  items-center text-center">
+              <button
+                onClick={(e) => {
+                  const d = e.target.innerText;
+                  timelineHandler(d, finding);
+                }}
+                className="shadow-xl py-2.5  rounded-xl w-4/12 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+              >
+                <BiPhoneCall className="text-4xl" />
+                Call
+              </button>
+               <button
+                onClick={(e) => {
+                  const d = e.target.innerText;
+                  timelineHandler(d, finding);
+                }}
+                className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+              >
+                <PiChatText className="text-4xl" />
+                Text
+              </button>
+              <button
+                onClick={(e) => {
+                  const d = e.target.innerText;
+                  timelineHandler(d, finding);
+                }}
+                className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+              >
+                <HiVideoCamera className="text-4xl" />
+                Video
+              </button>
             </div>
           </div>
         </div>
       </div>
-              </div>
+    </div>
   );
 };
 
