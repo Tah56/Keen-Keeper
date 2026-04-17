@@ -10,7 +10,7 @@ const CallData = () => {
   return (
     <div>
       {call.length === 0 ? (
-        <h2>{call.length}</h2>
+     ''
       ) : (
         <div className="">
           {call.map((data,i) => {

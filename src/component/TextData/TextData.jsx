@@ -9,7 +9,7 @@ const TextData = () => {
     return (
            <div>
       {nam.length === 0 ? (
-        <h2>{nam.length}</h2>
+        ''
       ) : (
         <div className=''>
           {nam.map((data,i) => {

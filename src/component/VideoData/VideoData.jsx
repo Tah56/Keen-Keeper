@@ -9,7 +9,7 @@ const VideoData = () => {
   return (
     <div>
       {video.length === 0 ? (
-        <h2>{video.length}</h2>
+      ''
       ) : (
         <div className="">
           {video.map((data,i) => {
