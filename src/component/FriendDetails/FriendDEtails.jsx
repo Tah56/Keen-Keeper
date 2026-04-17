@@ -1,11 +1,12 @@
 import  { useContext } from "react";
-import { BiPhoneCall } from "react-icons/bi";
+import { BiArchive, BiPhoneCall } from "react-icons/bi";
 import { HiVideoCamera } from "react-icons/hi";
 import { HiMiniVideoCamera, HiVideoCameraSlash } from "react-icons/hi2";
 import { PiChatText } from "react-icons/pi";
-import { TbBellZ } from "react-icons/tb";
+import { TbBellZ, TbTrash } from "react-icons/tb";
 import { useLoaderData, useParams } from "react-router";
 import ContextApi, { friendData } from "../ContextApi/ContextApi";
+import { toast } from "react-toastify";
 
 const FriendDEtails = () => {
   const context = useContext(friendData);
@@ -15,13 +16,14 @@ const FriendDEtails = () => {
   const data = useLoaderData();
   
   const finding = data.find((card) => card.id == num);
+  console.log(finding);
   
 
   return (
     <div className="  bg-[#F8FAFC]  ">
       <div className=" container h-full mx-auto py-20 flex flex-col md:flex-row gap-5 items-center justify-center  ">
         <div className="flex flex-col  ">
-          <div className="card bg-base-100   shadow-sm">
+          <div className="card bg-base-100  shadow-sm">
             <figure className="px-10 pt-10">
               <img
                 src={finding.picture}
@@ -49,12 +51,12 @@ const FriendDEtails = () => {
               Snooze 2 weeks
             </button>
             <button className="btn btn-wide">
-              <TbBellZ />
-              Snooze 2 weeks
+              <BiArchive />
+              Archive
             </button>
-            <button className="btn btn-wide">
-              <TbBellZ />
-              Snooze 2 weeks
+            <button className="btn btn-wide text-red-500">
+              <TbTrash />
+            Delete
             </button>
           </div>
         </div>
@@ -98,9 +100,10 @@ const FriendDEtails = () => {
               <button
                 onClick={(e) => {
                   const d = e.target.innerText;
-                  timelineHandler(d, finding);
+                  timelineHandler(d, finding)
+                  toast.success(`${d} with ${finding.name}`);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-full h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full md:w-1/3  h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <BiPhoneCall className="text-4xl" />
                 Call
@@ -109,8 +112,9 @@ const FriendDEtails = () => {
                 onClick={(e) => {
                   const d = e.target.innerText;
                   timelineHandler(d, finding);
+                  toast.success(`${d} with ${finding.name}`);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-full  h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full md:w-1/3  h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <PiChatText className="text-4xl" />
                 Text
@@ -119,8 +123,9 @@ const FriendDEtails = () => {
                 onClick={(e) => {
                   const d = e.target.innerText;
                   timelineHandler(d, finding);
+                  toast.success(`${d} with ${finding.name}`);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-full   h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full md:w-1/3   h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <HiVideoCamera className="text-4xl" />
                 Video
