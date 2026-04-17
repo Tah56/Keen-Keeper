@@ -6,7 +6,7 @@ import { Legend, Pie, PieChart, Tooltip } from "recharts";
 const Stats = () => {
   const context = useContext(friendData);
   const { nam, video, call } = context;
-  console.log(video.length, nam.length, call.length);
+ 
   const data = [
       { name: 'call', value:  call.length, fill: '#FFBB28' },
       { name: 'video', value:video.length, fill: '#00C49F' },
@@ -15,8 +15,13 @@ const Stats = () => {
 ];
 
    return (
-    <div className="mx-auto container flex items-center justify-center">
+    <div className="bg-[#F8FAFC] py-10 h-[93vh]">
+      <div className="container mx-auto mb-5">
 
+      <h2 className="font-semibold text-3xl">Friendship Analytics</h2>
+      </div>
+    <div className="    container mx-auto  flex flex-col items-center justify-center  shadow-2xl  p-20 ">
+    <h2 className="text-left font-bold text-2xl mb-5 ">By Interaction Type</h2>
     <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
       <Pie
         data={data}
@@ -33,6 +38,7 @@ const Stats = () => {
         <Legend></Legend>
         <Tooltip/>
     </PieChart>
+        </div>
         </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { BiPhoneCall } from "react-icons/bi";
 import { HiVideoCamera } from "react-icons/hi";
 import { HiMiniVideoCamera, HiVideoCameraSlash } from "react-icons/hi2";
@@ -13,14 +13,14 @@ const FriendDEtails = () => {
   const { num } = useParams();
 
   const data = useLoaderData();
-  console.log(data);
+  
   const finding = data.find((card) => card.id == num);
-  console.log(finding);
+  
 
   return (
     <div className="  bg-[#F8FAFC]  ">
-      <div className="w-3/5 h-[93vh] mx-auto py-20 flex flex-col md:flex-row gap-5   ">
-        <div className="flex flex-col w-2/5 ">
+      <div className=" container h-full mx-auto py-20 flex flex-col md:flex-row gap-5 items-center justify-center  ">
+        <div className="flex flex-col  ">
           <div className="card bg-base-100   shadow-sm">
             <figure className="px-10 pt-10">
               <img
@@ -31,7 +31,7 @@ const FriendDEtails = () => {
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">{finding.name}</h2>
-              <p className=" w-20 rounded-2xl bg-[#EF4444] text-white font-medium">
+              <p className={ `w-20 rounded-2xl font-medium text-white text-center mx-auto ${finding.status==="on-track"?  'bg-green-900': finding.status==="overdue"? "bg-red-600":'bg-[#EFAD44]'}`}>
                 {finding.status}
               </p>
               <div className="flex font-bold p-2.5 rounded-full gap-2 bg-[#CBFADB] uppercase">
@@ -40,7 +40,7 @@ const FriendDEtails = () => {
                 ))}
               </div>
               <p className="text-[#64748B] italic up">"{finding.bio}"</p>
-              <p className="text-[#64748B]">Preferred:{finding.email}</p>
+              <p className="text-[#64748B] text-[10px] md:text-base">Preferred:{finding.email}</p>
             </div>
           </div>
           <div className=" w-full mx-auto mt-4 flex flex-col items-center justify-center space-y-4">
@@ -58,7 +58,7 @@ const FriendDEtails = () => {
             </button>
           </div>
         </div>
-        <div className=" h-full w-full space-y-6 ">
+        <div className=" h-full  space-y-6 ">
           <div className=" flex flex-col md:flex-row   gap-6 justify-between items-center text-center ">
             <div className="shadow-xl py-8 px-12 rounded-xl bg-white ">
               <h2 className="font-semibold text-3xl  text-[#244D3F]">
@@ -100,7 +100,7 @@ const FriendDEtails = () => {
                   const d = e.target.innerText;
                   timelineHandler(d, finding);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-4/12 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <BiPhoneCall className="text-4xl" />
                 Call
@@ -110,7 +110,7 @@ const FriendDEtails = () => {
                   const d = e.target.innerText;
                   timelineHandler(d, finding);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full  h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <PiChatText className="text-4xl" />
                 Text
@@ -120,7 +120,7 @@ const FriendDEtails = () => {
                   const d = e.target.innerText;
                   timelineHandler(d, finding);
                 }}
-                className="shadow-xl py-2.5  rounded-xl w-1/3 h-full flex flex-col items-center btn bg-[#F8FAFC] "
+                className="shadow-xl py-2.5  rounded-xl w-full   h-full flex flex-col items-center btn bg-[#F8FAFC] "
               >
                 <HiVideoCamera className="text-4xl" />
                 Video

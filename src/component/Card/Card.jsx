@@ -11,7 +11,7 @@ const Card = ({cardData}) => {
         deta.map((card)=>{
           return <Link  key={card.id} to={`friendsdetails/${card.id}`}> <div className="card bg-base-100  shadow-sm text-center">
               
-      <figure>
+      <figure className="p-5">
         <img
           src={card.picture}
           alt="Shoes"
@@ -27,7 +27,7 @@ const Card = ({cardData}) => {
 
             {card.tags.map((id,index)=><h2 key={index} className="bg-[#CBFADB] p-2.5 rounded" >{id}</h2>)}
             </div>
-            <p>{card.status}</p>
+            <h1 className={ `w-20 rounded-2xl text-white text-center mx-auto ${card.status==="on-track"?  'bg-green-900': card.status==="overdue"? "bg-red-600":'bg-[#EFAD44]'}`} >{card.status}</h1>
         
       </div>
     </div>

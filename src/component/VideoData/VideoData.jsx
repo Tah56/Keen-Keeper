@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { friendData } from "../ContextApi/ContextApi";
+import { FaVideo } from "react-icons/fa";
 
 const VideoData = () => {
   const context = useContext(friendData);
@@ -10,18 +11,15 @@ const VideoData = () => {
       {video.length === 0 ? (
         <h2>{video.length}</h2>
       ) : (
-        <div className="border">
+        <div className="">
           {video.map((data,i) => {
             return (
-              <ul key={i} className="list bg-base-100 rounded-box shadow-md">
+              <ul key={i} className="list bg-base-100 rounded-box shadow-md mb-5">
                 <li className="p-4 pb-2 text-xs opacity-60 tracking-wide"></li>
 
                 <li className="list-row">
                   <div>
-                    <img
-                      className="size-10 rounded-box"
-                      src="https://img.daisyui.com/images/profile/demo/1@94.webp"
-                    />
+                    <FaVideo />
                   </div>
                   <div>
                     <div>{data.name}</div>

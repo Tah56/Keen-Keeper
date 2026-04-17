@@ -21,14 +21,14 @@ const CardsSection = () => {
     
     return (
         <div className='w-10/12 mx-auto'>
-            <h2>Yours Friend</h2>
+            <h2 className='font-medium text-2xl my-5'>Yours Friend</h2>
         
             <Suspense fallback={<div className="flex justify-center items-center ">
 
                 <span className="loading loading-spinner loading-xl"></span>
             </div>
         }>
-        <div className='  grid lg:grid-cols-3 gap-10'>
+        <div className='  grid grid-cols-1 lg:grid-cols-3 gap-10 items-center justify-center'>
 
             <Card cardData={cardData}/>
         </div>

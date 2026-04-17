@@ -12,21 +12,18 @@ const ContextApi = ({ children }) => {
   const [video, setVideo] = useState([]);
   const [call, setCall] = useState([]);
   const [filter, setFilter] = useState("all");
-  console.log(filter);
+ 
 
   const timelineHandler = (d, data) => {
     const id = d.toLowerCase();
 
-    console.log(id);
-
-    console.log(nam);
     const date = new Date().toLocaleString();
     const update = {
       ...data,
       type: id,
       date,
     };
-    console.log(update);
+    
 
     if (id === "video") {
       setTimeLine([...timeLIne, update]);
@@ -42,13 +39,13 @@ const ContextApi = ({ children }) => {
     } else {
       setCall([...call, update]);
     }
-    console.log(timeLIne);
+   
   };
 
   const filtering = (e = "null") => {
     const values = e;
 
-    console.log(values);
+  
 
     if (values === "video") {
       const t = timeLIne.filter((id) => id.type === "video");
